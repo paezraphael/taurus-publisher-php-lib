@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ARG PHP_VERSION=8.2-cli
+=======
+ARG PHP_VERSION=7.3.33-cli
+>>>>>>> tags/updateComposer
 
 FROM php:${PHP_VERSION}
 
