@@ -12,15 +12,6 @@ PHP library using LUA script to send for redis a job for Taurus queue
 
 ### Installation
 
-<<<<<<< HEAD
-[Release 6.0.0](https://github.com/not-empty/taurus-publisher-php-lib/releases/tag/6.0.0) Requires [PHP](https://php.net) 8.2
-
-[Release 5.0.0](https://github.com/not-empty/taurus-publisher-php-lib/releases/tag/5.0.0) Requires [PHP](https://php.net) 8.1
-
-[Release 4.0.0](https://github.com/not-empty/taurus-publisher-php-lib/releases/tag/4.0.0) Requires [PHP](https://php.net) 7.4
-
-=======
->>>>>>> tags/updateComposer
 [Release 3.0.0](https://github.com/not-empty/taurus-publisher-php-lib/releases/tag/3.0.0) Requires [PHP](https://php.net) 7.3
 
 [Release 2.0.0](https://github.com/not-empty/taurus-publisher-php-lib/releases/tag/2.0.0) Requires [PHP](https://php.net) 7.2
@@ -129,20 +120,12 @@ for ($i=0; $i < 1000000; $i++) {
 if you want an environment to run or test it, you can build and install dependences like this
 
 ```sh
-<<<<<<< HEAD
-docker build --build-arg PHP_VERSION=8.2-cli -t not-empty/taurus-publisher-php-lib:php82 -f contrib/Dockerfile .
-=======
 docker build --build-arg PHP_VERSION=7.3.33-cli -t not-empty/taurus-publisher-php-lib:php73 -f contrib/Dockerfile .
->>>>>>> tags/updateComposer
 ```
 
 Access the container
 ```sh
-<<<<<<< HEAD
-docker run -v ${PWD}/:/var/www/html -it not-empty/taurus-publisher-php-lib:php82 bash
-=======
 docker run -v ${PWD}/:/var/www/html -it not-empty/taurus-publisher-php-lib:php73 bash
->>>>>>> tags/updateComposer
 ```
 
 Verify if all dependencies is installed
@@ -168,20 +151,12 @@ To ensure that the entire project is fine:
 First you need to building a correct environment to install all dependences
 
 ```sh
-<<<<<<< HEAD
-docker build --build-arg PHP_VERSION=8.2-cli -t not-empty/taurus-publisher-php-lib:php82 -f contrib/Dockerfile .
-=======
 docker build --build-arg PHP_VERSION=7.3.33-cli -t not-empty/taurus-publisher-php-lib:php73 -f contrib/Dockerfile .
->>>>>>> tags/updateComposer
 ```
 
 Access the container
 ```sh
-<<<<<<< HEAD
-docker run -v ${PWD}/:/var/www/html -it not-empty/taurus-publisher-php-lib:php82 bash
-=======
 docker run -v ${PWD}/:/var/www/html -it not-empty/taurus-publisher-php-lib:php73 bash
->>>>>>> tags/updateComposer
 ```
 
 Install all dependences
