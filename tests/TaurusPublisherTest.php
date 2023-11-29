@@ -196,12 +196,8 @@ class TaurusPublisherTest extends TestCase
             ->getMock();
 
         $redisMock = Mockery::mock(Redis::class)
-            ->shouldReceive('getProfile')
+            ->shouldReceive('getCommandFactory')
             ->withNoArgs()
-            ->once()
-            ->andReturnSelf()
-            ->shouldReceive('defineCommand')
-            ->with('addjob', 'TaurusPublisher\RedisAddCommand')
             ->once()
             ->andReturnSelf()
             ->shouldReceive('addjob')
@@ -228,7 +224,13 @@ class TaurusPublisherTest extends TestCase
             ->andReturn('')
             ->getMock();
 
-        $taurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
+        $redisOptions = [
+            'commands' => [
+                'addjob' => 'TaurusPublisher\RedisAddCommand',
+            ]
+        ];
+
+        $taurusPublisher = Mockery::mock(TaurusPublisher::class, $redisOptions)->makePartial();
         $taurusPublisher->shouldReceive('getRedis')
             ->withNoArgs()
             ->once()
@@ -298,12 +300,8 @@ class TaurusPublisherTest extends TestCase
             ->getMock();
 
         $redisMock = Mockery::mock(Redis::class)
-            ->shouldReceive('getProfile')
+            ->shouldReceive('getCommandFactory')
             ->withNoArgs()
-            ->once()
-            ->andReturnSelf()
-            ->shouldReceive('defineCommand')
-            ->with('addjob', 'TaurusPublisher\RedisAddCommand')
             ->once()
             ->andReturnSelf()
             ->shouldReceive('addjob')
@@ -330,7 +328,12 @@ class TaurusPublisherTest extends TestCase
             ->andReturn('')
             ->getMock();
 
-        $taurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
+        $redisOptions = [
+            'commands' => [
+                'addjob' => 'TaurusPublisher\RedisAddCommand',
+            ]
+        ];
+        $taurusPublisher = Mockery::mock(TaurusPublisher::class, $redisOptions)->makePartial();
         $taurusPublisher->shouldReceive('getRedis')
             ->withNoArgs()
             ->once()
@@ -400,12 +403,8 @@ class TaurusPublisherTest extends TestCase
             ->getMock();
 
         $redisMock = Mockery::mock(Redis::class)
-            ->shouldReceive('getProfile')
+            ->shouldReceive('getCommandFactory')
             ->withNoArgs()
-            ->once()
-            ->andReturnSelf()
-            ->shouldReceive('defineCommand')
-            ->with('addjob', 'TaurusPublisher\RedisAddCommand')
             ->once()
             ->andReturnSelf()
             ->shouldReceive('addjob')
@@ -432,7 +431,13 @@ class TaurusPublisherTest extends TestCase
             ->andReturn('')
             ->getMock();
 
-        $taurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
+        $redisOptions = [
+            'commands' => [
+                'addjob' => 'TaurusPublisher\RedisAddCommand',
+            ]
+        ];
+
+        $taurusPublisher = Mockery::mock(TaurusPublisher::class, $redisOptions)->makePartial();
         $taurusPublisher->shouldReceive('getRedis')
             ->withNoArgs()
             ->once()
@@ -502,12 +507,8 @@ class TaurusPublisherTest extends TestCase
             ->getMock();
 
         $redisMock = Mockery::mock(Redis::class)
-            ->shouldReceive('getProfile')
+            ->shouldReceive('getCommandFactory')
             ->withNoArgs()
-            ->once()
-            ->andReturnSelf()
-            ->shouldReceive('defineCommand')
-            ->with('addjob', 'TaurusPublisher\RedisAddCommand')
             ->once()
             ->andReturnSelf()
             ->shouldReceive('addjob')
@@ -534,7 +535,13 @@ class TaurusPublisherTest extends TestCase
             ->andReturn('')
             ->getMock();
 
-        $taurusPublisher = Mockery::mock(TaurusPublisher::class)->makePartial();
+        $redisOptions = [
+            'commands' => [
+                'addjob' => 'TaurusPublisher\RedisAddCommand',
+            ]
+        ];
+
+        $taurusPublisher = Mockery::mock(TaurusPublisher::class, $redisOptions)->makePartial();
         $taurusPublisher->shouldReceive('getRedis')
             ->withNoArgs()
             ->once()
