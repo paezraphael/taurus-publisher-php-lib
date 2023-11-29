@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: raphael-G5-5590
 
     steps:
     - uses: actions/checkout@v2
