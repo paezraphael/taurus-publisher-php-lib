@@ -9,7 +9,11 @@ class TaurusPublisher
 {
     private $prefix = 'bull';
     private $redisConfig;
-    private $redisOptions;
+    private $redisOptions = [
+        'commands' => [
+            'addjob' => 'TaurusPublisher\RedisAddCommand',
+        ]
+    ];
     private $redis;
 
     /**
@@ -24,7 +28,7 @@ class TaurusPublisher
         Redis $redis = null
     ) {
         $this->redisConfig = $this->redisConfig($redisConfig);
-        $this->redisOptions = $redisOptions;
+        array_merge($this->redisOptions, $redisOptions);
         $this->redis = $redis;
     }
 
@@ -46,8 +50,7 @@ class TaurusPublisher
         $redis = $this->getRedis();
 
         $redis
-            ->getProfile()
-            ->defineCommand('addjob', 'TaurusPublisher\RedisAddCommand');
+            ->getCommandFactory();
 
         $token = $this->newUlid()->generate();
         $keyPrefix = sprintf('%s:%s:', $this->prefix, $queue);
